@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Meqn/file-access/compare/v1.0.0...v1.1.0) (2023-12-17)
+
+
+### 🚀 Features
+
+* Update index.ts ([33a1e3a](https://github.com/Meqn/file-access/commit/33a1e3a8f2cae6420d76718f6c856764e8549ecb))
+
 ## 1.0.0 (2023-12-17)
 
 
