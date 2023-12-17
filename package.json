@@ -24,7 +24,7 @@
     "tsup": "tsup ./index.ts --dts --format cjs,esm",
     "build": "rm -rf dist types && tsc && tsup ./index.ts --format cjs,esm",
     "test": "jest",
-    "coverage": "jest --ci --reporters=jest-junit"
+    "test:ci": "jest --ci --testResultsProcessor=jest-junit"
   },
   "publishConfig": {
     "access": "public",
