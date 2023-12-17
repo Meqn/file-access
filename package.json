@@ -2,18 +2,56 @@
   "name": "file-access",
   "version": "1.0.0",
   "description": "Easily fetch local or remote file, and return buffer data.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
-    "index.js"
+    "dist",
+    "types"
   ],
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
+    "tsc": "tsc",
+    "tsup": "tsup ./index.ts --dts --format cjs,esm",
+    "build": "rm -rf dist types && tsc &&tsup ./index.ts --format cjs,esm",
     "test": "jest"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "keywords": [
+    "access-file",
+    "fetch-file",
+    "readFile",
+    "readFileSync",
+    "buffer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengqing723/file-access.git"
+  },
+  "author": "Mervin <mengqing723@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mengqing723/file-access/issues"
+  },
+  "homepage": "https://github.com/mengqing723/file-access#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
 }
