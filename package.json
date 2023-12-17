@@ -22,7 +22,7 @@
   "scripts": {
     "tsc": "tsc",
     "tsup": "tsup ./index.ts --dts --format cjs,esm",
-    "build": "rm -rf dist types && tsc &&tsup ./index.ts --format cjs,esm",
+    "build": "rm -rf dist types && tsc && tsup ./index.ts --format cjs,esm",
     "test": "jest"
   },
   "publishConfig": {
