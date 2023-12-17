@@ -10,7 +10,7 @@ export interface FileBuffer extends Buffer {
 }
 
 /**
- * A function that requests a file from a given URL and executes a callback function on the file.
+ * A function that requests a file from a given URL.
  *
  * @param {string} url - The URL of the file to be accessed.
  * @param {CallbackFunc} callback - (Optional) A callback function to be called after accessing the file.
@@ -54,7 +54,6 @@ export const accessLocalFile = async (
 
 /**
  * Reads the contents of a local file synchronously and returns the data.
- * If a callback function is provided, it will be called with either the data or an error.
  *
  * @param {string} path - The path of the file to be read.
  * @param {CallbackFunc} [callback] - Optional callback function to be called with the data or an error.
