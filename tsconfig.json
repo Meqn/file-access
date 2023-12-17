@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+		"moduleResolution": "node",
+    "sourceMap": false,
+    "target": "ES2018",
+		"module": "commonjs",
+    "strict": true,
+
+    "allowJs": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+
+    "lib": ["ESNext", "DOM"],
+    "types": ["node", "jest"],
+    "declaration": true,
+    "declarationDir": "./types"
+  },
+  "files": ["index.ts"]
+}
