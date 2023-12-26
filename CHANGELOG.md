@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/Meqn/file-access/compare/v1.1.1...v1.1.2) (2023-12-26)
+
+
+### 🌟 Performance
+
+* Update function filterUrlQuery name ([4b0c33c](https://github.com/Meqn/file-access/commit/4b0c33c71f80bda02b9263ad7cbd1079dbc8cdb6))
+
 ## [1.1.1](https://github.com/Meqn/file-access/compare/v1.1.0...v1.1.1) (2023-12-26)
 
 
