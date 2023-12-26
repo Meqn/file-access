@@ -1,12 +1,19 @@
 import https from 'node:https'
 import http from 'node:http'
 import fs from 'node:fs'
+import path from 'node:path'
 
 const remoteRegex = /^(https?:\/\/).+/i
 
 type CallbackFunc = (err: Error | null, data?: Buffer) => void
 export interface FileBuffer extends Buffer {
   contentType?: string
+}
+
+function filterPathQuery(url: string): string {
+  const dirs = url.split(path.sep)
+  const last = dirs.pop() as string
+  return dirs.concat(last.split('?')[0]).join(path.sep)
 }
 
 /**
@@ -40,6 +47,8 @@ export const accessLocalFile = async (
   callback?: CallbackFunc
 ) => {
   return new Promise<FileBuffer>((resolve, reject) => {
+    path = filterPathQuery(path)
+
     fs.readFile(path, (err, data) => {
       if (err) {
         callback?.(err)
@@ -61,6 +70,7 @@ export const accessLocalFile = async (
  */
 export const accessLocalFileSync = (path: string, callback?: CallbackFunc) => {
   try {
+    path = filterPathQuery(path)
     const data = fs.readFileSync(path)
     callback?.(null, data)
     return data
