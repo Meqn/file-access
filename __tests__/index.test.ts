@@ -34,8 +34,8 @@ describe('accessFile', () => {
     const data = await accessFile('/path/to/local/file.txt')
     expect(data).toEqual(mockBuffer)
   })
-
-  test('handles remote files', async () => {
+  
+  it('handles remote files', async () => {
     const mockData = Buffer.from('Hello')
     // @ts-ignore
     jest.spyOn(https, 'get').mockImplementationOnce((_url: string, callback: Function) => {
