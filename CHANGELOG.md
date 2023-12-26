@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Meqn/file-access/compare/v1.1.0...v1.1.1) (2023-12-26)
+
+
+### 🐛 Bug Fixes
+
+* Not found due to local file path carrying query ([207e817](https://github.com/Meqn/file-access/commit/207e817c8dfd39a2ab487cadf404c2027dc3ada7))
+
 ## [1.1.0](https://github.com/Meqn/file-access/compare/v1.0.0...v1.1.0) (2023-12-17)
 
 
