@@ -10,7 +10,13 @@ export interface FileBuffer extends Buffer {
   contentType?: string
 }
 
-function filterPathQuery(url: string): string {
+/**
+ * 过滤 本地文件 URL 的查询部分
+ *
+ * @param {string} url - The URL to filter the query from.
+ * @return {string} The modified URL with the query portion removed.
+ */
+function filterUrlQuery(url: string): string {
   const dirs = url.split(path.sep)
   const last = dirs.pop() as string
   return dirs.concat(last.split('?')[0]).join(path.sep)
@@ -47,7 +53,7 @@ export const accessLocalFile = async (
   callback?: CallbackFunc
 ) => {
   return new Promise<FileBuffer>((resolve, reject) => {
-    path = filterPathQuery(path)
+    path = filterUrlQuery(path)
 
     fs.readFile(path, (err, data) => {
       if (err) {
@@ -70,7 +76,7 @@ export const accessLocalFile = async (
  */
 export const accessLocalFileSync = (path: string, callback?: CallbackFunc) => {
   try {
-    path = filterPathQuery(path)
+    path = filterUrlQuery(path)
     const data = fs.readFileSync(path)
     callback?.(null, data)
     return data
